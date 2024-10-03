@@ -18,11 +18,11 @@ extern "C" {
 #include "lvgl_tft/disp_driver.h"
 #include "lvgl_touch/touch_driver.h"
 
-#define DISPLAY_WIDTH 1024
-#define DISPLAY_HEIGHT 768
+#define DISPLAY_WIDTH 240
+#define DISPLAY_HEIGHT 320
 /* Backward compatibility for LV_HOR_RES_MAX & LV_VER_RES_MAX */
-#define LV_HOR_RES_MAX 1024
-#define LV_VER_RES_MAX 768
+#define LV_HOR_RES_MAX 240
+#define LV_VER_RES_MAX 320
 
 /*********************
  *      DEFINES
@@ -87,7 +87,7 @@ extern "C" {
 #elif defined (CONFIG_LV_TFT_DISPLAY_CONTROLLER_JD79653A)
 #define DISP_BUF_SIZE ((LV_VER_RES_MAX * LV_VER_RES_MAX) / 8) // 5KB
 #elif defined (CONFIG_LV_TFT_DISPLAY_CONTROLLER_UC8151D)
-#define DISP_BUF_SIZE ((LV_VER_RES_MAX * LV_VER_RES_MAX) / 8) // 2888 bytes
+#define DISP_BUF_SIZE ((LV_VER_RES_MAX * LV_HOR_RES_MAX) / 8) // 2888 bytes
 #else
 #error "No display controller selected"
 #endif
