@@ -420,7 +420,7 @@ void uc8151d_lv_set_fb_cb(lv_disp_drv_t *disp_drv, uint8_t *buf, lv_coord_t buf_
     uint8_t grayscale_value = color.full; // Full 8-bit grayscale
 
     // Set the corresponding buffer value based on grayscale
-    if (grayscale_value < 127) {
+    if (grayscale_value > 127) {
         // Set the pixel to black
         BIT_SET(buf[byte_index], bit_index);
     } else {
